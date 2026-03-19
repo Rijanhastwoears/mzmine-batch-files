@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?><batch mzmine_version="3.5.0">
+    <batchstep method="io.github.mzmine.modules.io.import_rawdata_all.AllSpectralDataImportModule" parameter_version="1">
+        <parameter name="File names"/>
+        <parameter name="Advanced import" selected="false">
+            <parameter name="MS1 detector (Advanced)" selected="false" selected_item="Factor of lowest signal">
+                <module name="Factor of lowest signal">
+                    <parameter name="Noise factor">2.5</parameter>
+                </module>
+                <module name="Centroid">
+                    <parameter name="Noise level">0.0</parameter>
+                    <parameter name="Detect isotope signals below noise level" selected="false">
+                        <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                        <parameter name="m/z tolerance">
+                            <absolutetolerance>5.0E-4</absolutetolerance>
+                            <ppmtolerance>10.0</ppmtolerance>
+                        </parameter>
+                        <parameter name="Maximum charge of isotope m/z">1</parameter>
+                    </parameter>
+                </module>
+                <module name="Exact mass">
+                    <parameter name="Noise level">100.0</parameter>
+                    <parameter name="Detect isotope signals below noise level" selected="false">
+                        <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                        <parameter name="m/z tolerance">
+                            <absolutetolerance>5.0E-4</absolutetolerance>
+                            <ppmtolerance>10.0</ppmtolerance>
+                        </parameter>
+                        <parameter name="Maximum charge of isotope m/z">1</parameter>
+                    </parameter>
+                </module>
+                <module name="Local maxima">
+                    <parameter name="Noise level"/>
+                </module>
+                <module name="Recursive threshold">
+                    <parameter name="Noise level"/>
+                    <parameter name="Min m/z peak width"/>
+                    <parameter name="Max m/z peak width"/>
+                </module>
+                <module name="Wavelet transform">
+                    <parameter name="Noise level">100.0</parameter>
+                    <parameter name="Scale level">5</parameter>
+                    <parameter name="Wavelet window size (%)">0.3</parameter>
+                </module>
+                <module name="Auto">
+                    <parameter name="Noise level">1000.0</parameter>
+                    <parameter name="Detect isotope signals below noise level" selected="false">
+                        <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                        <parameter name="m/z tolerance">
+                            <absolutetolerance>5.0E-4</absolutetolerance>
+                            <ppmtolerance>10.0</ppmtolerance>
+                        </parameter>
+                        <parameter name="Maximum charge of isotope m/z">1</parameter>
+                    </parameter>
+                </module>
+            </parameter>
+            <parameter name="MS2 detector (Advanced)" selected="false" selected_item="Factor of lowest signal">
+                <module name="Factor of lowest signal">
+                    <parameter name="Noise factor">2.5</parameter>
+                </module>
+                <module name="Centroid">
+                    <parameter name="Noise level">0.0</parameter>
+                    <parameter name="Detect isotope signals below noise level" selected="false">
+                        <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                        <parameter name="m/z tolerance">
+                            <absolutetolerance>5.0E-4</absolutetolerance>
+                            <ppmtolerance>10.0</ppmtolerance>
+                        </parameter>
+                        <parameter name="Maximum charge of isotope m/z">1</parameter>
+                    </parameter>
+                </module>
+                <module name="Exact mass">
+                    <parameter name="Noise level">100.0</parameter>
+                    <parameter name="Detect isotope signals below noise level" selected="false">
+                        <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                        <parameter name="m/z tolerance">
+                            <absolutetolerance>5.0E-4</absolutetolerance>
+                            <ppmtolerance>10.0</ppmtolerance>
+                        </parameter>
+                        <parameter name="Maximum charge of isotope m/z">1</parameter>
+                    </parameter>
+                </module>
+                <module name="Local maxima">
+                    <parameter name="Noise level"/>
+                </module>
+                <module name="Recursive threshold">
+                    <parameter name="Noise level"/>
+                    <parameter name="Min m/z peak width"/>
+                    <parameter name="Max m/z peak width"/>
+                </module>
+                <module name="Wavelet transform">
+                    <parameter name="Noise level">100.0</parameter>
+                    <parameter name="Scale level">5</parameter>
+                    <parameter name="Wavelet window size (%)">0.3</parameter>
+                </module>
+                <module name="Auto">
+                    <parameter name="Noise level">1000.0</parameter>
+                    <parameter name="Detect isotope signals below noise level" selected="false">
+                        <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                        <parameter name="m/z tolerance">
+                            <absolutetolerance>5.0E-4</absolutetolerance>
+                            <ppmtolerance>10.0</ppmtolerance>
+                        </parameter>
+                        <parameter name="Maximum charge of isotope m/z">1</parameter>
+                    </parameter>
+                </module>
+            </parameter>
+            <parameter name="Denormalize fragment scans (traps)">false</parameter>
+        </parameter>
+        <parameter name="Spectral library files"/>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.featdet_massdetection.MassDetectionModule" parameter_version="1">
+        <parameter name="Raw data files" type="BATCH_LAST_FILES"/>
+        <parameter name="Scan filters" selected="true">
+            <parameter name="Scan number"/>
+            <parameter name="Base Filtering Integer"/>
+            <parameter name="Retention time">
+                <min>0.0</min>
+                <max>14.0</max>
+            </parameter>
+            <parameter name="Mobility"/>
+            <parameter name="MS level filter" selected="MS1, level = 1">0</parameter>
+            <parameter name="Scan definition"/>
+            <parameter name="Polarity">Any</parameter>
+            <parameter name="Spectrum type">ANY</parameter>
+        </parameter>
+        <parameter name="Scan types (IMS)">All scan types</parameter>
+        <parameter name="Mass detector" selected_item="Centroid">
+            <module name="Factor of lowest signal">
+                <parameter name="Noise factor">2.5</parameter>
+            </module>
+            <module name="Centroid">
+                <parameter name="Noise level">100.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>5.0E-4</absolutetolerance>
+                        <ppmtolerance>10.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">1</parameter>
+                </parameter>
+            </module>
+            <module name="Exact mass">
+                <parameter name="Noise level">100.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>5.0E-4</absolutetolerance>
+                        <ppmtolerance>10.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">1</parameter>
+                </parameter>
+            </module>
+            <module name="Local maxima">
+                <parameter name="Noise level"/>
+            </module>
+            <module name="Recursive threshold">
+                <parameter name="Noise level"/>
+                <parameter name="Min m/z peak width"/>
+                <parameter name="Max m/z peak width"/>
+            </module>
+            <module name="Wavelet transform">
+                <parameter name="Noise level">100.0</parameter>
+                <parameter name="Scale level">5</parameter>
+                <parameter name="Wavelet window size (%)">0.3</parameter>
+            </module>
+            <module name="Auto">
+                <parameter name="Noise level">10000.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>3.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+        </parameter>
+        <parameter name="Denormalize fragment scans (traps)">false</parameter>
+        <parameter name="Output netCDF filename (optional)" selected="false"/>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.featdet_massdetection.MassDetectionModule" parameter_version="1">
+        <parameter name="Raw data files" type="BATCH_LAST_FILES"/>
+        <parameter name="Scan filters" selected="true">
+            <parameter name="Scan number"/>
+            <parameter name="Base Filtering Integer"/>
+            <parameter name="Retention time">
+                <min>14.0</min>
+                <max>10000.0</max>
+            </parameter>
+            <parameter name="Mobility"/>
+            <parameter name="MS level filter" selected="MS1, level = 1">1</parameter>
+            <parameter name="Scan definition"/>
+            <parameter name="Polarity">Any</parameter>
+            <parameter name="Spectrum type">ANY</parameter>
+        </parameter>
+        <parameter name="Scan types (IMS)">All scan types</parameter>
+        <parameter name="Mass detector" selected_item="Centroid">
+            <module name="Factor of lowest signal">
+                <parameter name="Noise factor">2.5</parameter>
+            </module>
+            <module name="Centroid">
+                <parameter name="Noise level">200.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>3.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+            <module name="Exact mass">
+                <parameter name="Noise level">1000.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="true">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>3.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+            <module name="Local maxima">
+                <parameter name="Noise level"/>
+            </module>
+            <module name="Recursive threshold">
+                <parameter name="Noise level"/>
+                <parameter name="Min m/z peak width"/>
+                <parameter name="Max m/z peak width"/>
+            </module>
+            <module name="Wavelet transform">
+                <parameter name="Noise level"/>
+                <parameter name="Scale level"/>
+                <parameter name="Wavelet window size (%)"/>
+            </module>
+            <module name="Auto">
+                <parameter name="Noise level">20000.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>3.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+        </parameter>
+        <parameter name="Denormalize fragment scans (traps)">false</parameter>
+        <parameter name="Output netCDF filename (optional)" selected="false"/>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.featdet_adapchromatogrambuilder.ModularADAPChromatogramBuilderModule" parameter_version="1">
+        <parameter name="Raw data files" type="BATCH_LAST_FILES"/>
+        <parameter name="Scan filters" selected="true">
+            <parameter name="Scan number"/>
+            <parameter name="Base Filtering Integer"/>
+            <parameter name="Retention time">
+                <min>0.3</min>
+                <max>30.0</max>
+            </parameter>
+            <parameter name="Mobility"/>
+            <parameter name="MS level filter" selected="MS1, level = 1">1</parameter>
+            <parameter name="Scan definition"/>
+            <parameter name="Polarity">Any</parameter>
+            <parameter name="Spectrum type">ANY</parameter>
+        </parameter>
+        <parameter name="Minimum consecutive scans">12</parameter>
+        <parameter name="Minimum intensity for consecutive scans">500.0</parameter>
+        <parameter name="Minimum absolute height">1000.0</parameter>
+        <parameter name="m/z tolerance (scan-to-scan)">
+            <absolutetolerance>0.002</absolutetolerance>
+            <ppmtolerance>10.0</ppmtolerance>
+        </parameter>
+        <parameter name="Suffix">_eic</parameter>
+        <parameter name="Allow single scan chromatograms"/>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.featdet_chromatogramdeconvolution.ADAPpeakpicking.AdapResolverModule" parameter_version="2">
+        <parameter name="Feature lists" type="BATCH_LAST_FEATURELISTS"/>
+        <parameter name="Suffix">_ADAP-res</parameter>
+        <parameter name="Original feature list">KEEP</parameter>
+        <parameter name="MS/MS scan pairing" selected="false">
+            <parameter name="MS1 to MS2 precursor tolerance (m/z)">
+                <absolutetolerance>0.01</absolutetolerance>
+                <ppmtolerance>10.0</ppmtolerance>
+            </parameter>
+            <parameter name="Retention time filter" selected="Use feature edges" unit="MINUTES">0.2</parameter>
+            <parameter name="Minimum relative feature height" selected="true">0.25</parameter>
+            <parameter name="Minimum required signals" selected="true">1</parameter>
+            <parameter name="Limit by ion mobility edges">false</parameter>
+            <parameter name="Merge MS/MS spectra (TIMS)">false</parameter>
+            <parameter name="Minimum signal intensity (absolute, TIMS)" selected="false">250.0</parameter>
+            <parameter name="Minimum signal intensity (relative, TIMS)" selected="true">0.01</parameter>
+        </parameter>
+        <parameter name="Dimension">Retention time</parameter>
+        <parameter name="S/N threshold">5.0</parameter>
+        <parameter name="S/N estimator" selected_item="Intensity window SN">
+            <module name="Intensity window SN"/>
+            <module name="Wavelet Coeff. SN">
+                <parameter name="Peak width mult.">3.0</parameter>
+                <parameter name="abs(wavelet coeffs.)">true</parameter>
+            </module>
+        </parameter>
+        <parameter name="min feature height">1000.0</parameter>
+        <parameter name="Coefficient/area threshold">110.0</parameter>
+        <parameter name="Peak duration range">
+            <min>0.0</min>
+            <max>1.0</max>
+        </parameter>
+        <parameter name="RT wavelet range">
+            <min>0.0</min>
+            <max>0.02</max>
+        </parameter>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.adap_mcr.ADAPMultivariateCurveResolutionModule" parameter_version="2">
+        <parameter name="Features" type="NAME_PATTERN">
+            <name_pattern>*ADAP-res</name_pattern>
+        </parameter>
+        <parameter name="Chromatograms" selected="true" type="NAME_PATTERN">
+            <name_pattern>*_eic</name_pattern>
+        </parameter>
+        <parameter name="Deconvolution window width (min)">0.2</parameter>
+        <parameter name="Retention time tolerance (min)">0.04</parameter>
+        <parameter name="Minimum Number of Peaks">1</parameter>
+        <parameter name="Adjust Apex Ret Times">false</parameter>
+        <parameter name="Suffix">spec_deconv</parameter>
+        <parameter name="Original feature list">KEEP</parameter>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.align_adap3.ADAP3AlignerModule" parameter_version="1">
+        <parameter name="Feature lists" type="BATCH_LAST_FEATURELISTS"/>
+        <parameter name="Min confidence (between 0 and 1)">0.0</parameter>
+        <parameter name="Retention time tolerance" unit="MINUTES">0.1</parameter>
+        <parameter name="m/z tolerance (sample-to-sample)">
+            <absolutetolerance>0.0015</absolutetolerance>
+            <ppmtolerance>5.0</ppmtolerance>
+        </parameter>
+        <parameter name="Score threshold (between 0 and 1)">0.5</parameter>
+        <parameter name="Score weight (between 0 and 1)">0.1</parameter>
+        <parameter name="Retention time similarity">Retention Time Difference (fast)</parameter>
+        <parameter name="Aligned Feature List Name">Aligned feature list</parameter>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.io.export_features_gnps.gc.GnpsGcExportAndSubmitModule" parameter_version="1">
+        <parameter name="Feature lists" type="BATCH_LAST_FEATURELISTS"/>
+        <parameter name="Filename">
+            <current_file>C:\Program Files\MZmine</current_file>
+            <last_file>C:\Program Files\MZmine</last_file>
+        </parameter>
+        <parameter name="Representative m/z">As in feature table</parameter>
+        <parameter name="Feature intensity">Area</parameter>
+        <parameter name="Open folder">false</parameter>
+    </batchstep>
+</batch>
